@@ -12,7 +12,7 @@ FILE *fp1, *fp2;
 int sudoku[9][9];
 int rule[3][9][9] = { 0 }, map_start[9][9], flag[9][9];
 //生成终盘
-bool set(int x, int y, int val)
+bool set(int x, int y, int val) 
 {
 	if (sudoku[y][x] != 0)		//非空
 		return false;
@@ -218,7 +218,6 @@ int main(int argc, char* argv[])
 							flag[i][k] = 1;
 						else
 							flag[i][k] = 0;
-						printf("%d ", flag[i][k]);
 						map_start[i][k]--;//为方便计算，初始化数字范围为0-8，代填的标为-1
 						if (flag[i][k]==0)
 							change_rule(1, k, i);//改写规则为已占用
@@ -226,8 +225,6 @@ int main(int argc, char* argv[])
 					}
 					if (i == 8)
 					{
-						printf("\n");
-						printf("\n");
 						solve(0, 0);
 						for (int i1 = 0; i1 < 3; i1++)
 							for (int i2 = 0; i2 < 9; i2++)
@@ -238,7 +235,6 @@ int main(int argc, char* argv[])
 					}
 					else
 					{
-						printf("\n");
 						i++;
 						k = 0;
 					}
